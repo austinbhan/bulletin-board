@@ -9,7 +9,7 @@ export async function fetchPosts() {
     return response.data;
 }
 
-export async function loadData(id) {
+export async function fetchPost(id) {
     const response = await client.from('POST_HISTORY').select('*').match({ id: id }).single();
     return response.data;
 
