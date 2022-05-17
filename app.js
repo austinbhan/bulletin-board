@@ -1,4 +1,7 @@
 // import functions and grab DOM elements
+import { loadData } from './fetch-utils.js';
+
+
 
 // let state
 
