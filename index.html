@@ -14,23 +14,27 @@
 
 <body>
     <header>
-        <div class="gutter-right logo">
-            <img src="./assets/big-logo.png" />
-        </div>
+        <h1>Alchemeet-me! (SFW Pls)</h1>
     </header>
     <main>
-        <form id="new-user-form">
-            <h3>Make a New Account</h3>
-            <p>Username: <input type="new-username"></p>
-            <p>Password: <input type="password"></p>
-            <button id="submit-new-user">Submit</button>
-        </form>
-        <form id="login-form">
-            <h3>Login with Existing Account</h3>
-            <p>Username: <input type="existing-username"></p>
-            <p>Password: <input type="password"></p>
-            <button id="submit-existing-user">Submit</button>
-        </form>
+        <div id="login-credentials">
+            <form id="new-user-form">
+                <h3>Make a New Account</h3>
+                <div>Username: <input type="new-username"></div>
+                <div>Password: <input type="password"></div>
+                <button id="submit-new-user">Submit</button>
+            </form>
+            <form id="login-form">
+                <h3>Existing Accounts</h3>
+                <div>Username: <input type="existing-username"></div>
+                <div>Password: <input type="password"></div>
+                <button id="submit-existing-user">Submit</button>
+            </form>
+        </div>
+        <div id="posting">
+            <ul id="posting-board">
+            </ul>
+        </div>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
