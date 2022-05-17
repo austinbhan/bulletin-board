@@ -1,1 +1,13 @@
 /* add home page styles here */
+
+#new-user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
