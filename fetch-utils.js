@@ -50,3 +50,8 @@ export async function createNewPost(post) {
 export function getUser() {
     return client.auth.session() && client.auth.session().user;
 }
+
+export function checkAuth() {
+    const user = getUser();
+    if (!user) {location.replace('/')};
+}

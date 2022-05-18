@@ -1,7 +1,9 @@
-import { createNewPost } from '../fetch-utils.js';
+import { createNewPost, checkAuth } from '../fetch-utils.js';
 
 const creationForm = document.getElementById('creation-form');
 const backButton = document.getElementById('back-button');
+
+checkAuth();
 
 backButton.addEventListener('click', () => {
     location.replace('/');
