@@ -45,10 +45,7 @@ export function getUser() {
 export async function checkAuth() {
     const user = getUser();
     if (!user) {
-        alert('You are not logged in yet!');
-        location.change('./login-screen');
-    } else {
-        location.change('./creation-page'); // How to Make Work?
+        alert('You are not registered or not logged in');
     }
 }
 
