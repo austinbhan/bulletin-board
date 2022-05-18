@@ -12,5 +12,13 @@ export async function fetchPosts() {
 export async function fetchPost(id) {
     const response = await client.from('POST_HISTORY').select('*').match({ id: id }).single();
     return response.data;
+}
 
+export async function signUpUser(email, password) {
+    const response = await client.auth.signUp({ email, password });
+    if (response.user) {
+        return response.user;
+    } else {
+        console.error(response.error);
+    }
 }
