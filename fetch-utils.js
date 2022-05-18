@@ -36,19 +36,6 @@ export async function signInUser(email, password) {
     }
 }
 
-// Check Username Database
-export function getUser() {
-    return client.auth.session() && client.auth.session().user;
-}
-
-// If New User or Not Logged In When Going to Creation Page, Move User to Login
-export async function checkAuth() {
-    const user = getUser();
-    if (!user) {
-        alert('You are not registered or not logged in');
-    }
-}
-
 // Create a New Post Function
 export async function createNewPost(post) {
     const response = await client.from('POST_HISTORY').insert(post);
@@ -57,4 +44,9 @@ export async function createNewPost(post) {
     } else {
         console.error(response.error);
     }
+}
+
+// Get User Function
+export function getUser() {
+    return client.auth.session() && client.auth.session().user;
 }
