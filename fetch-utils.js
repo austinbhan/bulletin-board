@@ -37,3 +37,6 @@ export async function signInUser(email, password) {
 }
 
 // Check Userbase
+export async function checkUser() {
+    
+}
