@@ -3,17 +3,20 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-export async function fetchPosts() {
+// Fetch All Posts
+export async function fetchPosts() { 
     const response = await client.from('POST_HISTORY').select('*');
 
     return response.data;
 }
 
+// Fetch One post
 export async function fetchPost(id) {
     const response = await client.from('POST_HISTORY').select('*').match({ id: id }).single();
     return response.data;
 }
 
+// Log New Users
 export async function signUpUser(email, password) {
     const response = await client.auth.signUp({ email, password });
     if (response.user) {
@@ -23,11 +26,14 @@ export async function signUpUser(email, password) {
     }
 }
 
+// Check Existing Users
 export async function signInUser(email, password) {
-    const response = await client.auth.signIn({ email, password});
+    const response = await client.auth.signIn({ email, password });
     if (response.user) {
         return response.user;
     } else {
         console.error(response.error);
     }
 }
+
+// Check Userbase
