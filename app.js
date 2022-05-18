@@ -1,6 +1,8 @@
 // import functions and grab DOM elements
-import { fetchPosts } from './fetch-utils.js';
+import { fetchPosts, checkAuth } from './fetch-utils.js';
 import { renderPost } from './utils.js';
+
+const createPostButton = document.getElementById('create-post-shortcut');
 
 
 async function loadData() {
@@ -25,4 +27,7 @@ newUserButton.addEventListener('click', () => {
     location.replace('./login-screen');
 });
 
-const createPostButton = document.getElementById('create-post-shortcut'); // If User Doesnt Exist or Not Logged In, Alert and Redirect to Registratio/Login Page
+ // // If New User or Not Logged In When Going to Creation Page, Move User to Login
+createPostButton.addEventListener('click', () => {
+    checkAuth();
+});

@@ -1,6 +1,11 @@
 import { createNewPost } from '../fetch-utils.js';
 
 const creationForm = document.getElementById('creation-form');
+const backButton = document.getElementById('back-button');
+
+backButton.addEventListener('click', () => {
+    location.replace('/');
+});
 
 creationForm.addEventListener('submit', async (e) => {
     e.preventDefault();

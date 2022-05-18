@@ -3,6 +3,11 @@ import { signInUser } from '../fetch-utils.js';
 
 const signUpForm = document.getElementById('sign-up-form');
 const signInForm = document.getElementById('sign-in-form');
+const backButton = document.getElementById('back-button');
+
+backButton.addEventListener('click', () => {
+    location.replace('/');
+});
 
 signUpForm.addEventListener('submit', async (e) => {
     e.preventDefault();

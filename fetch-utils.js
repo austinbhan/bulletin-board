@@ -37,16 +37,18 @@ export async function signInUser(email, password) {
 }
 
 // Check Username Database
-export async function checkUser() {
+export function getUser() {
     return client.auth.session() && client.auth.session().user;
 }
 
-// If New User or Not Logged In Creation Page, Move Back to Login
+// If New User or Not Logged In When Going to Creation Page, Move User to Login
 export async function checkAuth() {
-    const user = checkUser();
+    const user = getUser();
     if (!user) {
         alert('You are not logged in yet!');
         location.change('./login-screen');
+    } else {
+        location.change('./creation-page'); // How to Make Work?
     }
 }
 
