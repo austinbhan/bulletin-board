@@ -22,8 +22,6 @@ signInForm.addEventListener('submit', async (e) => {
 
     const user = await signInUser(data.get('existing-email'), data.get('existing-password'));
     if (!user) {
-        alert('Username does not exist');
-    } else {
-        location.replace('../creation-page');
-    }
+        alert('Username does not exist!');
+    } else {location.replace('../creation-page');}
 });

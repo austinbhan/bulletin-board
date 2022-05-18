@@ -41,10 +41,11 @@ export async function checkUser() {
     return client.auth.session() && client.auth.session().user;
 }
 
-// If New User or Not Logged In, Move to Login Page
+// If New User or Not Logged In Creation Page, Move Back to Login
 export async function checkAuth() {
     const user = checkUser();
     if (!user) {
+        alert('You are not logged in yet!');
         location.change('./login-screen');
     }
 }

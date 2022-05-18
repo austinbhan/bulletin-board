@@ -2,6 +2,7 @@
 import { fetchPosts } from './fetch-utils.js';
 import { renderPost } from './utils.js';
 
+
 async function loadData() {
     const posts = await fetchPosts();
     console.log(posts);
@@ -24,7 +25,4 @@ newUserButton.addEventListener('click', () => {
     location.replace('./login-screen');
 });
 
-const createPostButton = document.getElementById('create-post-shortcut');
-createPostButton.addEventListener('click', () => {
-    location.replace('./login-screen');
-});
+const createPostButton = document.getElementById('create-post-shortcut'); // If User Doesnt Exist or Not Logged In, Alert and Redirect to Registratio/Login Page
