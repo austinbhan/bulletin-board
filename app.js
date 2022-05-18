@@ -12,11 +12,19 @@ async function loadData() {
         main.append(postDiv);
     }
 }
-
 loadData();
-// let state
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+const loginButton = document.getElementById('login-button');
+loginButton.addEventListener('click', () => {
+    location.replace('./login-screen');
+});
+
+const newUserButton = document.getElementById('new-user-button');
+newUserButton.addEventListener('click', () => {
+    location.replace('./login-screen');
+});
+
+const createPostButton = document.getElementById('create-post-shortcut');
+createPostButton.addEventListener('click', () => {
+    location.replace('./login-screen');
+});

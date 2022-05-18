@@ -16,7 +16,7 @@ export async function fetchPost(id) {
     return response.data;
 }
 
-// Log New Users
+// Login New Users
 export async function signUpUser(email, password) {
     const response = await client.auth.signUp({ email, password });
     if (response.user) {
@@ -26,7 +26,7 @@ export async function signUpUser(email, password) {
     }
 }
 
-// Check Existing Users
+// Login Existing Users
 export async function signInUser(email, password) {
     const response = await client.auth.signIn({ email, password });
     if (response.user) {
@@ -36,7 +36,15 @@ export async function signInUser(email, password) {
     }
 }
 
-// Check Userbase
+// Check Username Database
 export async function checkUser() {
-    
+    return client.auth.session() && client.auth.session().user;
+}
+
+// If New User or Not Logged In, Move to Login Page
+export async function checkAuth() {
+    const user = checkUser();
+    if (!user) {
+        location.change('./login-screen');
+    }
 }
