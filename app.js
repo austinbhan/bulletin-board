@@ -1,8 +1,11 @@
 // import functions and grab DOM elements
-import { fetchPosts } from './fetch-utils.js';
+import { fetchPosts, logOut } from './fetch-utils.js';
 import { renderPost } from './utils.js';
 
-
+const logOutButton = document.getElementById('logout-button');
+logOutButton.addEventListener('click', () => {
+    logOut();
+});
 
 
 async function loadData() {

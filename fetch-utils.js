@@ -53,5 +53,12 @@ export function getUser() {
 
 export function checkAuth() {
     const user = getUser();
-    if (!user) {location.replace('/')};
+    if (!user) {location.replace('/');
+    }
+}
+
+export async function logOut() {
+    await client.auth.signOut();
+
+    return (window.location.href = '/');
 }
