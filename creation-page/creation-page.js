@@ -1,7 +1,15 @@
+import { createNewPost } from '../fetch-utils.js';
+
 const creationForm = document.getElementById('creation-form');
 
-creationForm.addEventListener('submit', (e) => {
+creationForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(creationForm);
-    console.log({ title: data.get('post-title'), user: data.get('username'), post: data.get('post-contents') });
+    const newPost = (
+        { title: data.get('post-title'), 
+            user: data.get('username'), 
+            post: data.get('post-contents') 
+        });
+    const seeMe = await createNewPost(newPost);
+    console.log(seeMe);
 });
