@@ -49,3 +49,13 @@ export async function checkAuth() {
         location.change('./login-screen');
     }
 }
+
+// Create a New Post Function
+export async function createNewPost(post) {
+    const response = await client.from('POST_HISTORY').insert(post);
+    if (response.data) {
+        return response.data;
+    } else {
+        console.error(response.error);
+    }
+}
