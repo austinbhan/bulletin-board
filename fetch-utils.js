@@ -59,6 +59,5 @@ export function checkAuth() {
 
 export async function logOut() {
     await client.auth.signOut();
-
     return (window.location.href = '/');
 }
