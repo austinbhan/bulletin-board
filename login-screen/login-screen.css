@@ -1,0 +1,11 @@
+#new-user {
+    display: flex;
+    flex-direction: column;
+    border: solid
+}
+
+#existing-user {
+    display: flex;
+    flex-direction: column;
+    border: solid;
+}
