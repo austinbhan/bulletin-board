@@ -19,4 +19,5 @@ creationForm.addEventListener('submit', async (e) => {
         });
     const seeMe = await createNewPost(newPost);
     console.log(seeMe);
+    location.replace('/');
 });
